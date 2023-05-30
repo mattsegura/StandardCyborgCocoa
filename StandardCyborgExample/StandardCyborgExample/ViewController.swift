@@ -64,6 +64,7 @@ class ViewController: UIViewController {
         let vc = ScenePreviewViewController(scScene: scScene)
         vc.leftButton.addTarget(self, action: #selector(deletePreviewedSceneTapped), for: UIControl.Event.touchUpInside)
         vc.rightButton.addTarget(self, action: #selector(dismissPreviewedScanTapped), for: UIControl.Event.touchUpInside)
+        
         vc.leftButton.setTitle("Delete", for: UIControl.State.normal)
         vc.rightButton.setTitle("Dismiss", for: UIControl.State.normal)
         vc.leftButton.backgroundColor = UIColor(named: "DestructiveAction")
@@ -82,6 +83,7 @@ class ViewController: UIViewController {
         dismiss(animated: false)
     }
     
+    // when the user taps save, pass the values into the saveScebe function
     @objc private func savePreviewedSceneTapped() {
         saveScene(scene: scenePreviewVC!.scScene, thumbnail: scenePreviewVC?.renderedSceneImage)
         dismiss(animated: true)
